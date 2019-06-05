@@ -3,5 +3,43 @@
 		<p>
 			Ingrese todos los datos para crear un nuevo curso
 		</p>
+		<form action="/creacioncurso" method="post">
+			<div class="form-group">
+				<div class="row">
+					<div class="col">
+						<label>Nombre completo</label>
+						<input type="text" class="form-control" name="nombre" placeholder="Nombre del curso" required><br>
+					</div>
+					<div class="col">
+						<label>ID</label>
+						<input type="number" class="form-control" name="id" placeholder="ID del curso" required>
+					</div>
+					<div class="col">
+						<label>Descripción</label>
+						<input type="text" class="form-control" name="descripcion" placeholder="Descripción del curso" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<label>Valor</label>
+						<input type="number" class="form-control" name="valor" placeholder="Valor del curso" required>
+					</div>
+					<div class="col">
+						<label>Modalidad</label>
+						<select class="form-control" name="modalidad">
+							<option value="Virtual">Virtual</option> 
+							<option value="Presencial">Presencial</option>
+						</select>
+					</div>
+
+					<div class="col">
+						<label>Intensidad horaria</label>
+						<input type="number" class="form-control" name="intensidad" placeholder="Intensidad horaria">
+					</div>
+				</div>
+				<br>
+				<button>Crear</button>
+			</div>
+		</form>
 
 {{>footer}}

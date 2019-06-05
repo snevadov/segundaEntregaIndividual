@@ -8,6 +8,8 @@ const path = require('path');
 const hbs = require('hbs');
 //Manejo de body Parser
 const bodyParser = require('body-parser');
+//Manejo de las funciones
+const funciones = require('./funciones');
 //Manejo de helpers
 require('./helpers');
 
@@ -47,6 +49,27 @@ app.get('/',(req, res) => {
 // Página para crear
 app.get('/crear',(req, res) => {
 	res.render('crear', {
+		titulo: 'Creación de cursos'
+	});
+});
+
+// Página creacioncurso via helper post
+app.post('/creacioncurso',(req, res) => {
+	
+	let curso = {
+			estudiante: req.body.nombre,
+			id: parseInt(req.body.id),
+			descripcion: req.body.descripcion,
+			valor: parseInt(req.body.valor),
+			modalidad: req.body.modalidad,
+			intensidad: parseInt(req.body.intensidad),
+			estado:"Disponible"
+		};
+
+	let respuesta = funciones.crear(curso);
+
+	res.render('prueba', {
+		mensaje: respuesta.mensaje,
 		titulo: 'Creación de cursos'
 	});
 });
