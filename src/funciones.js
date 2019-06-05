@@ -33,12 +33,12 @@ const crear = (curso) => {
 		listaCursos.push(nuevoCurso);
 		guardar();
 		mensaje = "El curso fue creado de manera exitosa";
-		let exito = true;
+		exito = true;
 	}
 	else
 	{
 		mensaje = "Ya existe otro curso con ese id";
-		let exito = false;
+		exito = false;
 	}
 
 	//Edito el objeto de la respuesta

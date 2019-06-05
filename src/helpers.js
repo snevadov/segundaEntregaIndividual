@@ -31,7 +31,6 @@ hbs.registerHelper('listar', () => {
 		</tr>';
 	})
 	texto = texto + '</tbody> \
-		</table>'
-	console.log("EJECUTADO");
+		</table>';
 	return texto;
 });

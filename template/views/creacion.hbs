@@ -1,6 +1,14 @@
 {{>header}}
+
 		<p>
 			{{respuesta.mensaje}}
 		</p>
-		{{{listar}}}
+		<br>
+		<div {{styleListado}} >
+			<p>
+				Los cursos que se tienen hasta el momento son:
+			</p>
+			{{{listar}}}
+		</div>
+      	<a {{styleBoton}} class="btn btn-primary" href="/crear" role="button">Volver</a>
 {{>footer}}

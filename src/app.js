@@ -67,11 +67,25 @@ app.post('/crear',(req, res) => {
 		};
 
 	let respuesta = funciones.crear(curso);
-
-	res.render('creacion', {
-		respuesta: respuesta,
-		titulo: 'Resultado creación de cursos'
-	});
+	console.log(respuesta);
+	if(respuesta.exito)
+	{
+		res.render('creacion', {
+			respuesta: respuesta,
+			titulo: 'Resultado creación de cursos',
+			styleListado: "",
+			styleBoton: "hidden"
+		});
+	}
+	else
+	{
+		res.render('creacion', {
+			respuesta: respuesta,
+			titulo: 'Resultado creación de cursos',
+			styleListado: "hidden",
+			styleBoton: ""
+		});
+	}
 });
 
 // Página diferente al index
