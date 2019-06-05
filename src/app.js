@@ -54,10 +54,10 @@ app.get('/crear',(req, res) => {
 });
 
 // Página creacioncurso via helper post
-app.post('/creacioncurso',(req, res) => {
+app.post('/crear',(req, res) => {
 	
 	let curso = {
-			estudiante: req.body.nombre,
+			nombre: req.body.nombre,
 			id: parseInt(req.body.id),
 			descripcion: req.body.descripcion,
 			valor: parseInt(req.body.valor),
@@ -68,9 +68,9 @@ app.post('/creacioncurso',(req, res) => {
 
 	let respuesta = funciones.crear(curso);
 
-	res.render('prueba', {
-		mensaje: respuesta.mensaje,
-		titulo: 'Creación de cursos'
+	res.render('creacion', {
+		respuesta: respuesta,
+		titulo: 'Resultado creación de cursos'
 	});
 });
 

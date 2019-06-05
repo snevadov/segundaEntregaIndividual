@@ -32,12 +32,12 @@ const crear = (curso) => {
 	{
 		listaCursos.push(nuevoCurso);
 		guardar();
-		mensaje = "Curso creado de manera exitosa";
+		mensaje = "El curso fue creado de manera exitosa";
 		let exito = true;
 	}
 	else
 	{
-		mensaje = "Ya existe otro curso con ese nombre";
+		mensaje = "Ya existe otro curso con ese id";
 		let exito = false;
 	}
 
@@ -57,10 +57,11 @@ const listar = () => {
 		//Se puede usar require o JSON.parse
 
 		//Require trae la variable y permanece más en el tiempo
+		listaCursos = [];
 		listaCursos = require('../listado.json');
 
 		//JSON.parse para manera asincrónica
-		//listaEstudiantes = JSON.parse(fs.readFileSync('listado.json'));
+		//listaCursos = JSON.parse(fs.readFileSync('listado.json'));
 	} 
 	catch(error){
 		//Si no hay nada, inicia vacía
@@ -77,7 +78,14 @@ const guardar = () => {
 	})
 }
 
+//Función con la que obtengo el listado de cursos
+const getListado = () => {
+	listar();
+	return listaCursos;
+}
+
 
 module.exports = {
-	crear
+	crear,
+	getListado
 }
