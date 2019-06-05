@@ -44,6 +44,13 @@ app.get('/',(req, res) => {
 	});
 });
 
+// Página para crear
+app.get('/crear',(req, res) => {
+	res.render('crear', {
+		titulo: 'Creación de cursos'
+	});
+});
+
 // Página diferente al index
 app.get('*',(req, res) => {
 	res.render('error', {
